@@ -64,10 +64,15 @@ class Comics extends Component {
         })
     }
 
+    handleOnSubmit = (event) => {
+        event.preventDefault()
+        this.fetchComics()
+    }
+
     render() {
         return (
             <>
-                <form onChange={this.handleOnChange}>
+                <form onChange={this.handleOnChange} onSubmit={this.handleOnSubmit}>
                     <input type="text" name="startsWith"></input>
                     <input type="submit"></input>
                 </form>
