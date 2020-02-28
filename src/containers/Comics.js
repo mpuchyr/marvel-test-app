@@ -15,6 +15,10 @@ class Comics extends Component {
     }
     
     componentDidMount() {
+        this.fetchComics()
+    }
+
+    fetchComics = () => {
         let timeStamp = Date.now()
         let hash = md5(timeStamp + privateKey + publicKey)
         let fullUrl = ''
@@ -53,12 +57,18 @@ class Comics extends Component {
         })
     }
     
-    
+    handleOnChange = (event) => {
+        this.setState({
+            ...this.state,
+            [event.target.name]: event.target.value
+        })
+    }
+
     render() {
         return (
             <>
-                <form>
-                    <input type="text"></input>
+                <form onChange={this.handleOnChange}>
+                    <input type="text" name="startsWith"></input>
                     <input type="submit"></input>
                 </form>
                 <br />
