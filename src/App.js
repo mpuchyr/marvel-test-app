@@ -7,7 +7,7 @@ require('dotenv').config()
 
 
 // const charactersUrl = URL + `v1/public/characters?apikey=${publicKey}`
-const charactersUrl = URL + 'v1/public/characters'
+// const charactersUrl = URL + 'v1/public/characters'
 
 
 

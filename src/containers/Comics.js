@@ -7,9 +7,12 @@ const privateKey = process.env.REACT_APP_API_PRIVATE_KEY
 const URL = "https://gateway.marvel.com/"
 const comicsUrl = URL + 'v1/public/comics'
 
-let comics = []
 
 class Comics extends Component {
+    state = {
+        comics: [],
+    }
+    
     componentDidMount() {
         let timeStamp = Date.now()
         let hash = md5(timeStamp + privateKey + publicKey)
@@ -22,16 +25,32 @@ class Comics extends Component {
           }
         })
         .then(info => {
-          comics = info.data.results
-          // console.log(comics)
+            this.setState({
+                comics: info.data.results
+            })
         })
         .catch(err => console.log(err))
-      }
+    }
+
+    displayComics = () => {
+        console.log(this.state)
+        return this.state.comics.map(comic => {
+            let imgSrc = `${comic.thumbnail.path}.${comic.thumbnail.extension}`
+            console.log(imgSrc)
+            return (
+                <>
+                    <img src={imgSrc} alt={comic.title}/>
+                    <h4>{comic.title}</h4>
+                </>
+            )
+        })
+    }
     
     
     render() {
         return (
             <div>
+                {this.displayComics()}
             </div>
         )
     }
