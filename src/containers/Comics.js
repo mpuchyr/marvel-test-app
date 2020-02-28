@@ -11,12 +11,19 @@ const comicsUrl = URL + 'v1/public/comics'
 class Comics extends Component {
     state = {
         comics: [],
+        startsWith: ''
     }
     
     componentDidMount() {
         let timeStamp = Date.now()
         let hash = md5(timeStamp + privateKey + publicKey)
-        fetch(comicsUrl + `?format=comic&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`)
+        let fullUrl = ''
+        if (this.state.startsWith) {
+            fullUrl = comicsUrl + `?titleStartsWith=${this.state.startsWith}&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
+        } else {
+            fullUrl = comicsUrl + `?&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
+        }
+        fetch(fullUrl)
         .then(res => {
           if (res.status !== 200) {
             throw new Error(res.status.text)
@@ -40,7 +47,7 @@ class Comics extends Component {
             return (
                 <div className="comic">
                     <img key={comic.id} src={imgSrc} alt={comic.title}/>
-                    <h4 key={comic.id}>{comic.title}</h4>
+                    <h4>{comic.title}</h4>
                 </div>
             )
         })
@@ -50,6 +57,11 @@ class Comics extends Component {
     render() {
         return (
             <>
+                <form>
+                    <input type="text"></input>
+                    <input type="submit"></input>
+                </form>
+                <br />
                 {this.displayComics()}
             </>
         )
