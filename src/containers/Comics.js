@@ -38,10 +38,10 @@ class Comics extends Component {
             let imgSrc = `${comic.thumbnail.path}.${comic.thumbnail.extension}`
             console.log(imgSrc)
             return (
-                <>
-                    <img src={imgSrc} alt={comic.title}/>
-                    <h4>{comic.title}</h4>
-                </>
+                <div className="comic">
+                    <img key={comic.id} src={imgSrc} alt={comic.title}/>
+                    <h4 key={comic.id}>{comic.title}</h4>
+                </div>
             )
         })
     }
@@ -49,9 +49,9 @@ class Comics extends Component {
     
     render() {
         return (
-            <div>
+            <>
                 {this.displayComics()}
-            </div>
+            </>
         )
     }
 }
