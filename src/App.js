@@ -1,34 +1,20 @@
 import React, { Component } from 'react';
-import md5 from 'md5';
+
 import './App.css';
+import Comics from './containers/Comics'
 
 require('dotenv').config()
 
-const publicKey = process.env.REACT_APP_API_KEY
-const privateKey = process.env.REACT_APP_API_PRIVATE_KEY
-const URL = "https://gateway.marvel.com/"
+
 // const charactersUrl = URL + `v1/public/characters?apikey=${publicKey}`
 const charactersUrl = URL + 'v1/public/characters'
-const comicsUrl = URL + 'v1/public/comics'
 
-let comics = []
+
+
 
 class App extends Component {
   
-  componentDidMount() {
-    let timeStamp = Date.now()
-    let hash = md5(timeStamp + privateKey + publicKey)
-    fetch(comicsUrl + `?format=comic&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`)
-    .then(res => {
-      if (res.status !== 200) {
-        throw new Error(res.status.text)
-      } else {
-        return res.json()
-      }
-    })
-    .then(info => console.log(info))
-    .catch(err => console.log(err))
-  }
+
   
   // state = {
   //   characterName: ''
@@ -124,6 +110,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Marvel App</h1>
+        <Comics />
       </div>
     )
   }
