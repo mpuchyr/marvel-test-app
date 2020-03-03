@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './containers/Home'
 import Comics from './containers/Comics'
+import Characters from './containers/Characters'
 
 require('dotenv').config()
 
@@ -116,6 +117,7 @@ class App extends Component {
             <Router>
               <Switch>
                 <Route exact path="/" component={ Home } />
+                <Route exact path="/characters" component={ Characters } />
                 <Route exact path="/comics" component={ Comics } />
               </Switch>
             </Router>
