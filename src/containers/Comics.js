@@ -11,7 +11,8 @@ const comicsUrl = URL + 'v1/public/comics'
 class Comics extends Component {
     state = {
         comics: [],
-        startsWith: ''
+        startsWith: '',
+        limit: 20
     }
     
     componentDidMount() {
@@ -23,9 +24,9 @@ class Comics extends Component {
         let hash = md5(timeStamp + privateKey + publicKey)
         let fullUrl = ''
         if (this.state.startsWith) {
-            fullUrl = comicsUrl + `?titleStartsWith=${this.state.startsWith}&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
+            fullUrl = comicsUrl + `?titleStartsWith=${this.state.startsWith}&limit=${this.state.limit}&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
         } else {
-            fullUrl = comicsUrl + `?&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
+            fullUrl = comicsUrl + `?limit=${this.state.limit}&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
         }
         fetch(fullUrl)
         .then(res => {
@@ -64,6 +65,7 @@ class Comics extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault()
+        console.log(this.state)
         this.fetchComics()
     }
 
@@ -71,8 +73,11 @@ class Comics extends Component {
         return (
             <>
                 <form onChange={this.handleOnChange} onSubmit={this.handleOnSubmit}>
-                    <input type="text" name="startsWith"></input>
-                    <input type="submit"></input>
+                <input type="text" name="startsWith" placeholder="name"></input>
+                <br />
+                <input type="text" name="limit" placeholder="limit"></input>
+                <br />
+                <input type="submit"></input>
                 </form>
                 <br />
                 {this.displayComics()}
