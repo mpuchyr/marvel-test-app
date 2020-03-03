@@ -35,19 +35,31 @@ class Characters extends Component {
         })
         .then(info => {
             console.log(info)
-            // this.setState({
-            //     characters: info.data.results
-            // })
+            this.setState({
+                characters: info.data.results
+            })
         })
         .catch(err => console.log(err))
     }
 
-
+    displayCharacters = () => {
+        return this.state.characters.map(character => {
+            let imgSrc = `${character.thumbnail.path}.${character.thumbnail.extension}`
+            console.log(imgSrc)
+            return (
+                <div className="comic">
+                    <img key={character.id} src={imgSrc} alt={character.name}/>
+                    <h4>{character.name}</h4>
+                </div>
+            )
+        })
+    }
     
     render() {        
         return(
             <>
                 <h1>Placeholder Charcter Text</h1>
+                {this.displayCharacters()}
             </>
         )
     }
