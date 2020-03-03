@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 import Comics from './containers/Comics'
@@ -110,7 +111,14 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Marvel App</h1>
-        <Comics />
+          <div className="container">
+            <Router>
+              <Switch>
+                <Route exact path="/comics" component={ Comics } />
+              </Switch>
+            </Router>
+          </div>
+        
       </div>
     )
   }
