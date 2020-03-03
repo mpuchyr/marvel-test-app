@@ -9,7 +9,8 @@ const charsUrl = URL + 'v1/public/characters'
 class Characters extends Component {
     state = {
         characters: [],
-        startsWith: ''
+        startsWith: '',
+        limit: 20
     }
 
     componentDidMount = () => {
@@ -21,9 +22,9 @@ class Characters extends Component {
         let hash = md5(timeStamp + privateKey + publicKey)
         let fullUrl = ''
         if (this.state.startsWith) {
-            fullUrl = charsUrl + `?nameStartsWith=${this.state.startsWith}&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
+            fullUrl = charsUrl + `?nameStartsWith=${this.state.startsWith}&limit=${this.state.limit}&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
         } else {
-            fullUrl = charsUrl + `?&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
+            fullUrl = charsUrl + `?limit=${this.state.limit}&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
         }
         fetch(fullUrl)
         .then(res => {
@@ -63,6 +64,7 @@ class Characters extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault()
+        console.log(this.state)
         this.fetchCharacters()
     }
     
@@ -71,7 +73,10 @@ class Characters extends Component {
             <>
                 <h1>Placeholder Charcter Text</h1>
                 <form onChange={this.handleOnChange} onSubmit={this.handleOnSubmit}>
-                    <input type="text" name="startsWith"></input>
+                    <input type="text" name="startsWith" placeholder="name"></input>
+                    <br />
+                    <input type="text" name="limit" placeholder="limit"></input>
+                    <br />
                     <input type="submit"></input>
                 </form>
                 <br />
