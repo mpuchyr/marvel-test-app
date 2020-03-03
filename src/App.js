@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
+import Home from './containers/Home'
 import Comics from './containers/Comics'
 
 require('dotenv').config()
@@ -114,6 +115,7 @@ class App extends Component {
           <div className="container">
             <Router>
               <Switch>
+                <Route exact path="/" component={ Home } />
                 <Route exact path="/comics" component={ Comics } />
               </Switch>
             </Router>
