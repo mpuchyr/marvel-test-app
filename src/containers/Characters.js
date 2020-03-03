@@ -54,6 +54,18 @@ class Characters extends Component {
             )
         })
     }
+
+    handleOnChange = (event) => {
+        this.setState({
+            ...this.state,
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleOnSubmit = (event) => {
+        event.preventDefault()
+        this.fetchCharacters()
+    }
     
     render() {        
         return(
