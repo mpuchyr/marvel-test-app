@@ -71,6 +71,11 @@ class Characters extends Component {
         return(
             <>
                 <h1>Placeholder Charcter Text</h1>
+                <form onChange={this.handleOnChange} onSubmit={this.handleOnSubmit}>
+                    <input type="text" name="startsWith"></input>
+                    <input type="submit"></input>
+                </form>
+                <br />
                 {this.displayCharacters()}
             </>
         )
