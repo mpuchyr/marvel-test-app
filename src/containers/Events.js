@@ -55,12 +55,32 @@ class Events extends Component {
         })
     }
 
+    handleOnChange = (event) => {
+        this.setState({
+            ...this.state,
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleOnSubmit = (event) => {
+        event.preventDefault()
+        console.log(this.state)
+        this.fetchEvents()
+    }
 
 
     render(){
         return (
             <>
                 <h1>Events</h1>
+                <form onChange={this.handleOnChange} onSubmit={this.handleOnSubmit}>
+                <input type="text" name="startsWith" placeholder="name"></input>
+                <br />
+                <input type="text" name="limit" placeholder="limit"></input>
+                <br />
+                <input type="submit"></input>
+                </form>
+                <br />
                 { this.displayEvents()}
             </>
         )
