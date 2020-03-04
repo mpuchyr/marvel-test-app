@@ -142,7 +142,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
+            <div className="home-container">
                 <h1>Search Marvel Comics and Characters</h1>
                 { this.chooseImages()}
             </div>
