@@ -63,6 +63,7 @@ class Home extends Component {
         .then(info => {
             console.log(info)
             this.setState({
+                ...this.state,
                 characters: info.data.results
             })
         })
@@ -84,6 +85,7 @@ class Home extends Component {
         .then(info => {
             console.log(info.data)
             this.setState({
+                ...this.state,
                 events: info.data.results
             })
         })
