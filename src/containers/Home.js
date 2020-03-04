@@ -44,9 +44,12 @@ class Home extends Component {
     }
 
     fetchCharacters = () => {
+        const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+        let charStartsWith = alphabet[Math.floor(Math.random() * alphabet.length)]
+        console.log(charStartsWith)
         let timeStamp = Date.now()
         let hash = md5(timeStamp + privateKey + publicKey)
-        let fullUrl = charsUrl + `?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
+        let fullUrl = charsUrl + `?nameStartsWith=${charStartsWith}&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
         fetch(fullUrl)
         .then(res => {
         if (res.status !== 200) {
