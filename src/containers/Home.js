@@ -17,6 +17,8 @@ class Home extends Component {
 
     componentDidMount() {
         this.fetchComics()
+        this.fetchCharacters()
+        this.fetchEvents()
     }
     
     fetchComics = () => {
@@ -83,22 +85,36 @@ class Home extends Component {
     }
 
     chooseImages = () => {
-        let comic = Math.floor(Math.random() * this.state.comics.length)
+        let comic = this.state.comics[Math.floor(Math.random() * this.state.comics.length)]
         if (comic) {
             while (comic.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
-                comic = Math.floor(Math.random() * this.state.comics.length)
+                comic = this.state.comics[Math.floor(Math.random() * this.state.comics.length)]
             }
             console.log(comic)
         }
 
-        // let character = ''
-        // let event = ''
+        let character = this.state.characters[Math.floor(Math.random() * this.state.characters.length)]
+        if (character) {
+            while (character.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
+                character = this.state.characters[Math.floor(Math.random() * this.state.characters.length)]
+            }
+            console.log(character)
+        }
+
+        let event = this.state.events[Math.floor(Math.random() * this.state.events.length)]
+        if (event) {
+            while (event.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
+                event = this.state.events[Math.floor(Math.random() * this.state.events.length)]
+            }
+            console.log(event)
+        }
     }
 
     render() {
         return (
             <div>
                 <h1>Search Marvel Comics and Characters</h1>
+                { this.chooseImages()}
             </div>
         )
     }
