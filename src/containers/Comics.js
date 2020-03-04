@@ -71,7 +71,7 @@ class Comics extends Component {
 
     render() {
         return (
-            <>
+            <div className="comic-container">
                 <form onChange={this.handleOnChange} onSubmit={this.handleOnSubmit}>
                 <input type="text" name="startsWith" placeholder="name"></input>
                 <br />
@@ -81,7 +81,7 @@ class Comics extends Component {
                 </form>
                 <br />
                 {this.displayComics()}
-            </>
+            </div>
         )
     }
 }
