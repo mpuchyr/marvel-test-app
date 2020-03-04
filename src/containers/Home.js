@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import md5 from 'md5';
+import { NavLink } from 'react-router-dom'
 
 const publicKey = process.env.REACT_APP_API_KEY
 const privateKey = process.env.REACT_APP_API_PRIVATE_KEY
@@ -120,15 +121,15 @@ class Home extends Component {
             return (
                 <>
                     <div className="home-img-container">
-                        <img src={comicImgSrc} alt="Comics" />
+                        <NavLink to='/comics'><img src={comicImgSrc} alt="Comics" /></NavLink>
                         <h2>Comics</h2>
                     </div>
                     <div className="home-img-container">
-                        <img src={charImgSrc} alt="Characters" />
+                        <NavLink to='/characters'><img src={charImgSrc} alt="Characters" /></NavLink>
                         <h2>Characters</h2>
                     </div>
                     <div className="home-img-container">
-                        <img src={eventImgSrc} alt="Events" />
+                        <NavLink to='/events'><img src={eventImgSrc} alt="Events" /></NavLink>
                         <h2>Events</h2>
                     </div>
 
