@@ -15,6 +15,9 @@ class Home extends Component {
         events: []
     }
 
+    componentDidMount() {
+        this.fetchComics()
+    }
     
     fetchComics = () => {
         let timeStamp = Date.now()
@@ -81,11 +84,15 @@ class Home extends Component {
 
     chooseImages = () => {
         let comic = Math.floor(Math.random() * this.state.comics.length)
-        while (comic.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
-            comic = Math.floor(Math.random() * this.state.comics.length)
+        if (comic) {
+            while (comic.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
+                comic = Math.floor(Math.random() * this.state.comics.length)
+            }
+            console.log(comic)
         }
-        let character = ''
-        let event = ''
+
+        // let character = ''
+        // let event = ''
     }
 
     render() {
