@@ -7,6 +7,8 @@ import Comics from './containers/Comics'
 import Characters from './containers/Characters'
 import Events from './containers/Events'
 
+import NavBar from './components/NavBar'
+
 require('dotenv').config()
 
 
@@ -116,6 +118,7 @@ class App extends Component {
         <h1>Marvel App</h1>
           <div className="container">
             <Router>
+              <NavBar />
               <Switch>
                 <Route exact path="/" component={ Home } />
                 <Route exact path="/characters" component={ Characters } />
