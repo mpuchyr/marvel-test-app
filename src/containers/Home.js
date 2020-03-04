@@ -79,6 +79,15 @@ class Home extends Component {
         .catch(err => console.log(err))
     }
 
+    chooseImages = () => {
+        let comic = Math.floor(Math.random() * this.state.comics.length)
+        while (comic.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
+            comic = Math.floor(Math.random() * this.state.comics.length)
+        }
+        let character = ''
+        let event = ''
+    }
+
     render() {
         return (
             <div>
