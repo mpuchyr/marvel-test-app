@@ -70,7 +70,7 @@ class Home extends Component {
     fetchEvents = () => {
         let timeStamp = Date.now()
         let hash = md5(timeStamp + privateKey + publicKey)
-        let fullUrl = eventsUrl + `?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
+        let fullUrl = eventsUrl + `?limit=100&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
         fetch(fullUrl)
         .then(res => {
           if (res.status !== 200) {
