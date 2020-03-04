@@ -8,6 +8,7 @@ const URL = "https://gateway.marvel.com/"
 const comicsUrl = URL + 'v1/public/comics'
 const eventsUrl = URL + 'v1/public/events'
 const charsUrl = URL + 'v1/public/characters'
+const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 class Home extends Component {
     state = {
@@ -23,7 +24,7 @@ class Home extends Component {
     }
     
     fetchComics = () => {
-        const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
         let comicStartsWith = alphabet[Math.floor(Math.random() * alphabet.length)]
         let timeStamp = Date.now()
         let hash = md5(timeStamp + privateKey + publicKey)
@@ -46,7 +47,6 @@ class Home extends Component {
     }
 
     fetchCharacters = () => {
-        const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
         let charStartsWith = alphabet[Math.floor(Math.random() * alphabet.length)]
         console.log(charStartsWith)
         let timeStamp = Date.now()
