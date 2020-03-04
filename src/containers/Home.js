@@ -90,7 +90,7 @@ class Home extends Component {
             while (comic.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
                 comic = this.state.comics[Math.floor(Math.random() * this.state.comics.length)]
             }
-            console.log(comic)
+
         }
 
         let character = this.state.characters[Math.floor(Math.random() * this.state.characters.length)]
@@ -98,7 +98,7 @@ class Home extends Component {
             while (character.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
                 character = this.state.characters[Math.floor(Math.random() * this.state.characters.length)]
             }
-            console.log(character)
+
         }
 
         let event = this.state.events[Math.floor(Math.random() * this.state.events.length)]
@@ -106,8 +106,37 @@ class Home extends Component {
             while (event.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
                 event = this.state.events[Math.floor(Math.random() * this.state.events.length)]
             }
-            console.log(event)
+
         }
+
+        return this.displayImages(comic, character, event)
+    }
+
+    displayImages = (comic, character, event) => {
+        if (comic && character && event) {
+            let comicImgSrc = `${comic.thumbnail.path}.${comic.thumbnail.extension}`
+            let charImgSrc = `${character.thumbnail.path}.${character.thumbnail.extension}`
+            let eventImgSrc = `${event.thumbnail.path}.${event.thumbnail.extension}`
+            return (
+                <>
+                    <div className="home-img-container">
+                        <img src={comicImgSrc} alt="Comics" />
+                        <h2>Comics</h2>
+                    </div>
+                    <div className="home-img-container">
+                        <img src={charImgSrc} alt="Characters" />
+                        <h2>Characters</h2>
+                    </div>
+                    <div className="home-img-container">
+                        <img src={eventImgSrc} alt="Events" />
+                        <h2>Events</h2>
+                    </div>
+
+                </>
+            )
+        }
+
+
     }
 
     render() {
