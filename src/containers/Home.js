@@ -87,7 +87,7 @@ class Home extends Component {
     chooseImages = () => {
         let comic = this.state.comics[Math.floor(Math.random() * this.state.comics.length)]
         if (comic) {
-            while (comic.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
+            while (comic.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') {
                 comic = this.state.comics[Math.floor(Math.random() * this.state.comics.length)]
             }
 
@@ -95,7 +95,7 @@ class Home extends Component {
 
         let character = this.state.characters[Math.floor(Math.random() * this.state.characters.length)]
         if (character) {
-            while (character.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
+            while (character.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') {
                 character = this.state.characters[Math.floor(Math.random() * this.state.characters.length)]
             }
 
@@ -103,7 +103,7 @@ class Home extends Component {
 
         let event = this.state.events[Math.floor(Math.random() * this.state.events.length)]
         if (event) {
-            while (event.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
+            while (event.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') {
                 event = this.state.events[Math.floor(Math.random() * this.state.events.length)]
             }
 
