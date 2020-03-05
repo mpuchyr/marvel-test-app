@@ -37,10 +37,23 @@ class Event extends Component {
         .catch(err => console.log(err))
     }
 
+    displayEvent = () => {
+        return this.state.events.map(event => {
+            let imgSrc = `${event.thumbnail.path}.${event.thumbnail.extension}`
+            return (
+                <div className="event">
+                    <h1>{event.title}</h1>
+                    <img key={event.id} src={imgSrc} alt={event.title}/>
+                    <p>{event.description}</p>
+                </div>
+            )
+        })
+    }
+
     render() {
         return (
             <div>
-                <h1>Event Placeholder Text</h1>
+                {this.displayEvent()}
             </div>
         )
     }
