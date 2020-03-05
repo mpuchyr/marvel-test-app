@@ -12,13 +12,6 @@ let hash = md5(timeStamp + privateKey + publicKey)
 
 class EventCharacters extends Component {
 
-    // getCharacterIds = () => {
-    //     let charIds = this.props.characters.forEach(character => {
-    //         let charURI = character.resourceURI.split("/")
-    //         let charId = charURI[charURI.length - 1]
-    //         return charId
-    //     })
-    // }
 
     getCharacterLi = () => {
         return this.props.characters.map(character => {
