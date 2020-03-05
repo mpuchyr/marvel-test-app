@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import md5 from 'md5'
 
 const publicKey = process.env.REACT_APP_API_KEY
 const privateKey = process.env.REACT_APP_API_PRIVATE_KEY
@@ -8,6 +9,10 @@ const comicsUrl = URL + 'v1/public/comics'
 class Comic extends Component {
     state = {
         comics: []
+    }
+
+    componentDidMount() {
+        this.fetchComic()
     }
 
     fetchComic = () => {
@@ -30,7 +35,6 @@ class Comic extends Component {
             })
         })
         .catch(err => console.log(err))
-    }
     }
     
     render() {
