@@ -6,7 +6,6 @@ const publicKey = process.env.REACT_APP_API_KEY
 const privateKey = process.env.REACT_APP_API_PRIVATE_KEY
 const URL = "https://gateway.marvel.com/"
 const eventsUrl = URL + 'v1/public/events'
-const charsUrl = URL + 'v1/public/characters'
 
 class Event extends Component {
     state = {

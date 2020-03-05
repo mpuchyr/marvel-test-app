@@ -20,7 +20,7 @@ class EventCharacters extends Component {
     render() {
         return (
             <div>
-                <h1>Event Character Placeholder</h1>
+                <h1>Characters</h1>
                 { this.displayCharacters()}
             </div>
 
