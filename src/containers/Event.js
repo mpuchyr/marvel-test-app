@@ -8,11 +8,27 @@ const eventsUrl = URL + 'v1/public/events'
 
 class Event extends Component {
 
+    componentDidMount() {
+        this.fetchEvent()
+    }
+
     fetchEvent = () => {
         let timeStamp = Date.now()
         let hash = md5(timeStamp + privateKey + publicKey)
         let paramsId = parseInt(this.props.match.params.id, 10)
-        let fullUrl = eventsUrl + `${paramsId}?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
+        let fullUrl = eventsUrl + `/${paramsId}?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
+        fetch(fullUrl)
+        .then(res => {
+            if (res.status !== 200) {
+                throw new Error(res.status.text)
+            } else {
+                return res.json()
+            }
+        })
+        .then(info => {
+            console.log(info)
+        })
+        .catch(err => console.log(err))
     }
 
     render() {
