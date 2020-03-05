@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import md5 from 'md5';
 
 const publicKey = process.env.REACT_APP_API_KEY
@@ -45,10 +46,13 @@ class Characters extends Component {
 
     displayCharacters = () => {
         return this.state.characters.map(character => {
-            let imgSrc = `${character.thumbnail.path}.${character.thumbnail.extension}`
+            const imgSrc = `${character.thumbnail.path}.${character.thumbnail.extension}`
+            const link = `/characters/${character.id}`
             return (
                 <div className="comic">
-                    <img key={character.id} src={imgSrc} alt={character.name}/>
+                    <NavLink to={link} >
+                        <img key={character.id} src={imgSrc} alt={character.name}/>
+                    </NavLink>
                     <h4>{character.name}</h4>
                 </div>
             )
