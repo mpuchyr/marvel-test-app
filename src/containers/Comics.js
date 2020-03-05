@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import md5 from 'md5';
 
 
@@ -47,9 +48,12 @@ class Comics extends Component {
     displayComics = () => {
         return this.state.comics.map(comic => {
             let imgSrc = `${comic.thumbnail.path}.${comic.thumbnail.extension}`
+            let link = `/comics/${comic.id}`
             return (
                 <div className="comic">
-                    <img key={comic.id} src={imgSrc} alt={comic.title}/>
+                    <NavLink to={link}>
+                        <img key={comic.id} src={imgSrc} alt={comic.title}/>
+                    </NavLink>
                     <h4>{comic.title}</h4>
                 </div>
             )
