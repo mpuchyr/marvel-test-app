@@ -6,6 +6,7 @@ import Home from './containers/Home'
 import Comics from './containers/Comics'
 import Characters from './containers/Characters'
 import Events from './containers/Events'
+import Event from './containers/Event'
 
 import NavBar from './components/NavBar'
 
@@ -27,6 +28,7 @@ class App extends Component {
                 <Route exact path="/characters" component={ Characters } />
                 <Route exact path="/comics" component={ Comics } />
                 <Route exact path="/events" component={ Events } />
+                <Route exact path="/events/:id" component={ Event } />
               </Switch>
             </Router>
           </div>
