@@ -7,6 +7,9 @@ const URL = "https://gateway.marvel.com/"
 const eventsUrl = URL + 'v1/public/events'
 
 class Event extends Component {
+    state = {
+        events: []
+    }
 
     componentDidMount() {
         this.fetchEvent()
@@ -27,6 +30,9 @@ class Event extends Component {
         })
         .then(info => {
             console.log(info)
+            this.setState({
+                events: info.data.results
+            })
         })
         .catch(err => console.log(err))
     }
