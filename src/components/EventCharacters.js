@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import md5 from 'md5';
 
 const publicKey = process.env.REACT_APP_API_KEY
@@ -23,9 +24,10 @@ class EventCharacters extends Component {
         return this.props.characters.map(character => {
             let charURI = character.resourceURI.split("/")
             let charId = charURI[charURI.length - 1]
+            let link = `/characters/${charId}`
             console.log(charId)
             console.log(character.name)
-            return <li>{character.name}</li>
+            return <li><NavLink to={link}>{character.name}</NavLink></li>
         })
     }
 
