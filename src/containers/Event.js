@@ -8,7 +8,8 @@ const eventsUrl = URL + 'v1/public/events'
 
 class Event extends Component {
     state = {
-        events: []
+        events: [],
+        characters: []
     }
 
     componentDidMount() {
@@ -30,8 +31,10 @@ class Event extends Component {
         })
         .then(info => {
             console.log(info)
+            console.log(info.data.results[0].characters.items)
             this.setState({
-                events: info.data.results
+                events: info.data.results,
+                characters: info.data.results[0].characters.items
             })
         })
         .catch(err => console.log(err))
