@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import md5 from 'md5';
+import EventCharacters from '../components/EventCharacters'
 
 const publicKey = process.env.REACT_APP_API_KEY
 const privateKey = process.env.REACT_APP_API_PRIVATE_KEY
@@ -54,26 +55,13 @@ class Event extends Component {
         })
     }
 
-    getCharacterLi = () => {
-        return this.state.characters.map(character => {
-            console.log(character.name)
-            return <li>{character.name}</li>
-        })
-    }
 
-    displayCharacters = () => {
-        return (
-            <ul>
-                {this.getCharacterLi()}
-            </ul>
-        )
-    }
 
     render() {
         return (
             <div>
                 {this.displayEvent()}
-                {this.displayCharacters()}
+                <EventCharacters characters={this.state.characters}/>
             </div>
         )
     }
