@@ -31,16 +31,28 @@ class Comic extends Component {
         .then(info => {
             console.log(info)
             this.setState({
-                characters: info.data.results
+                comics: info.data.results
             })
         })
         .catch(err => console.log(err))
+    }
+
+    displayComic = () => {
+        return this.state.comics.map(comic => {
+            let imgSrc = `${comic.thumbnail.path}.${comic.thumbnail.extension}`
+            return (
+                <div className="comic">
+                    <h1>{comic.title}</h1>
+                    <img key={comic.id} src={imgSrc} alt={comic.title}/>
+                </div>
+            )
+        })
     }
     
     render() {
         return(
             <div>
-                <h1>Comic Placeholder Text</h1>
+                {this.displayComic()}
             </div>
         )
     }
