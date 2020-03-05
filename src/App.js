@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './containers/Home'
 import Comics from './containers/Comics'
+import Comic from './containers/Comic'
 import Characters from './containers/Characters'
 import Character from './containers/Character'
 import Events from './containers/Events'
@@ -29,6 +30,7 @@ class App extends Component {
                 <Route exact path="/characters" component={ Characters } />
                 <Route exact path="/characters/:id" component={ Character } />
                 <Route exact path="/comics" component={ Comics } />
+                <Route exact path="/comics/:id" component={ Comic } />
                 <Route exact path="/events" component={ Events } />
                 <Route exact path="/events/:id" component={ Event } />
               </Switch>
