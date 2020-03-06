@@ -32,7 +32,7 @@ class CharacterComics extends Component {
         console.log(this.props.comics)
         return (
             <div>
-                <h1>Character Comics Placeholder</h1>
+                <h1>Comics</h1>
                 {this.displayComics()}
             </div>
         )
