@@ -9,7 +9,8 @@ const charsUrl = URL + 'v1/public/characters'
 
 class Character extends Component {
     state = {
-        characters: []
+        characters: [],
+        comics: []
     }
 
 
@@ -31,9 +32,10 @@ class Character extends Component {
             }
         })
         .then(info => {
-            console.log(info)
+            // console.log(info.data.results[0].comics.items)
             this.setState({
-                characters: info.data.results
+                characters: info.data.results,
+                comics: info.data.results[0].comics.items
             })
         })
         .catch(err => console.log(err))
@@ -55,7 +57,7 @@ class Character extends Component {
         return(
             <div>
                 {this.displayCharacter()}
-                <CharacterComics />
+                <CharacterComics comics={this.state.comics}/>
             </div>
         )
     }
