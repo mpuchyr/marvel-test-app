@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import md5 from 'md5';
+import CharacterComics from '../components/CharacterComics'
 
 const publicKey = process.env.REACT_APP_API_KEY
 const privateKey = process.env.REACT_APP_API_PRIVATE_KEY
@@ -54,6 +55,7 @@ class Character extends Component {
         return(
             <div>
                 {this.displayCharacter()}
+                <CharacterComics />
             </div>
         )
     }
