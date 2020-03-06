@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import md5 from 'md5'
+import EventCharacters from '../components/EventCharacters'
 
 const publicKey = process.env.REACT_APP_API_KEY
 const privateKey = process.env.REACT_APP_API_PRIVATE_KEY
@@ -8,7 +9,8 @@ const comicsUrl = URL + 'v1/public/comics'
 
 class Comic extends Component {
     state = {
-        comics: []
+        comics: [],
+        characters: []
     }
 
     componentDidMount() {
@@ -29,9 +31,10 @@ class Comic extends Component {
             }
         })
         .then(info => {
-            console.log(info)
+            // console.log(info.data.results[0].characters)
             this.setState({
-                comics: info.data.results
+                comics: info.data.results,
+                characters: info.data.results[0].characters.items
             })
         })
         .catch(err => console.log(err))
@@ -53,6 +56,7 @@ class Comic extends Component {
         return(
             <div>
                 {this.displayComic()}
+                <EventCharacters characters={this.state.characters} />
             </div>
         )
     }

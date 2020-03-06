@@ -11,6 +11,8 @@ class EventCharacters extends Component {
 
 
     getCharacter = () => {
+        console.log("in EventCharacters")
+        console.log(this.props.characters)
         return this.props.characters.map(character => {
             let charURI = character.resourceURI.split("/")
             let charId = charURI[charURI.length - 1]
