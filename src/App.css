@@ -37,21 +37,3 @@
   }
 }
 
-.home-container {
-  width: 80%;
-  margin: auto;
-}
-
-.home-img-container {
-  width: 30%;
-  margin: auto 10px;
-  float: left;
-}
-
-.home-img-container img {
-  width: 100%;
-}
-
-.event-characters {
-  
-}
