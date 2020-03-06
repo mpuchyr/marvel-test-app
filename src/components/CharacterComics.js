@@ -19,13 +19,21 @@ class CharacterComics extends Component {
             )
         })
     }
+
+    displayComics = () => {
+        return (
+            <div className="character-comics">
+                {this.getComic()}
+            </div>
+        )
+    }
     
     render() {
         console.log(this.props.comics)
         return (
             <div>
                 <h1>Character Comics Placeholder</h1>
-                
+                {this.displayComics()}
             </div>
         )
     }
