@@ -42,7 +42,7 @@ class EventCharacterImage extends Component {
     render() {
         return(
             <>
-                <img src={this.state.imgSrc} alt={this.state.alt} />
+                <img className="event-character-img" src={this.state.imgSrc} alt={this.state.alt} />
                 <p>{this.state.alt}</p>
             </>
         )
