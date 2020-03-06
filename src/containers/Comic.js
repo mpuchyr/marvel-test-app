@@ -41,12 +41,14 @@ class Comic extends Component {
     }
 
     displayComic = () => {
+        console.log(this.state.comics)
         return this.state.comics.map(comic => {
             let imgSrc = `${comic.thumbnail.path}.${comic.thumbnail.extension}`
             return (
                 <div className="comic">
                     <h1>{comic.title}</h1>
                     <img key={comic.id} src={imgSrc} alt={comic.title}/>
+                    <p>{comic.description}</p>
                 </div>
             )
         })
