@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import md5 from 'md5';
+import EventCharacterImage from './EventCharacterImage'
 
 const publicKey = process.env.REACT_APP_API_KEY
 const privateKey = process.env.REACT_APP_API_PRIVATE_KEY
@@ -26,30 +27,11 @@ class EventCharacters extends Component {
             return (
                 <li>
                     <NavLink to={link} key={character.name}>
-                        {character.name}
+                        <EventCharacterImage charId={charId}/>
                     </NavLink>
                 </li>
             )
         })
-    }
-
-    getCharacterImage = (charId) => {
-        let timeStamp = Date.now()
-        let hash = md5(timeStamp + privateKey + publicKey)
-        let fullUrl = charsUrl + `/${charId}?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
-        return fetch(fullUrl)
-        .then(res => {
-            if (res.status !== 200) {
-                throw new Error(res.status.text)
-            } else {
-                return res.json()
-            }
-        })
-        .then(info => {
-            return `<img src=${info.data.results[0].thumbnail.path}.${info.data.results[0].thumbnail.extension} alt=${info.data.results[0].name}/>`
-          
-        })
-        .catch(err => console.log(err))
     }
 
     displayCharacters = () => {
