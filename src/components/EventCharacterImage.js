@@ -8,7 +8,8 @@ const charsUrl = URL + 'v1/public/characters'
 
 class EventCharacterImage extends Component {
     state = {
-        charImage: ''
+        imgSrc: '',
+        alt: ''
     }
 
     componentDidMount() {
@@ -29,7 +30,9 @@ class EventCharacterImage extends Component {
         })
         .then(info => {
             this.setState({
-                charImage: `<img src=${info.data.results[0].thumbnail.path}.${info.data.results[0].thumbnail.extension} alt=${info.data.results[0].name}/>`
+                imgSrc: `${info.data.results[0].thumbnail.path}.${info.data.results[0].thumbnail.extension}`,
+                alt: `${info.data.results[0].name}`
+
             }) 
           
         })
@@ -38,9 +41,10 @@ class EventCharacterImage extends Component {
     
     render() {
         return(
-            <div>
-                {this.state.charImage}
-            </div>
+            <>
+                <img src={this.state.imgSrc} alt={this.state.alt} />
+                <p>{this.state.alt}</p>
+            </>
         )
     }
 }
