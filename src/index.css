@@ -14,14 +14,21 @@ code {
 
 .event-container {
   width: 80%;
+  align-content: center;
   margin: auto;
+}
+
+.event-container form {
+  margin: auto;
+  align-content: center;
 }
 
 .event-container .comic {
   width: 30%;
   float: left;
+  margin: auto 1.6%;
 }
 
 .event-container .comic img {
-  width: 200px;
+  width: 100%;
 }
