@@ -12,6 +12,8 @@ code {
     monospace;
 }
 
+
+
 .event-characters {
   width: 80%;
   margin: auto;
@@ -24,5 +26,6 @@ code {
 }
 
 .event-characters .event-character img {
-  width: 40%;
+  width: 200px;
+  height: 200px;
 }
