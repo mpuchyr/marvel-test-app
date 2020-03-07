@@ -32,3 +32,25 @@ code {
 .event-container .comic img {
   width: 100%;
 }
+
+
+.comic-container {
+  width: 80%;
+  align-content: center;
+  margin: auto;
+}
+
+.comic-container form {
+  margin: auto;
+  align-content: center;
+}
+
+.comic-container .comic {
+  width: 30%;
+  float: left;
+  margin: auto 1.6%;
+}
+
+.comic-container .comic img {
+  width: 100%;
+}
