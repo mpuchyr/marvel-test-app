@@ -12,3 +12,16 @@ code {
     monospace;
 }
 
+.event-container {
+  width: 80%;
+  margin: auto;
+}
+
+.event-container .comic {
+  width: 30%;
+  float: left;
+}
+
+.event-container .comic img {
+  width: 200px;
+}
