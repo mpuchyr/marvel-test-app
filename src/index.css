@@ -47,10 +47,13 @@ code {
 
 .comic-container .comic {
   width: 30%;
+  height: 400px;
   float: left;
-  margin: auto 1.6%;
+  margin: 10px 1.6%;
 }
 
 .comic-container .comic img {
-  width: 100%;
+  /* width: 100%; */
+  width: 200px;
+  height: 300px;
 }
