@@ -12,6 +12,21 @@ code {
     monospace;
 }
 
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.comic {
+  width: 30%;
+  margin: auto;
+  float: left;
+}
+
+.comic img {
+  width: 200px;
+}
+
 .home-container {
   width: 80%;
   margin: auto;
