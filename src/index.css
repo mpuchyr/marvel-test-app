@@ -74,3 +74,20 @@ code {
   width: 200px;
   height: 300px;
 }
+
+.character-container {
+  width: 80%;
+  align-content: center;
+  margin: auto;
+}
+
+.comic {
+  width: 30%;
+  height: 400px;
+  float: left;
+  margin: 10px 1.6%;
+}
+
+.comic img {
+  width: 100%;
+}
