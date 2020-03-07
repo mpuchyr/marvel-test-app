@@ -75,7 +75,7 @@ class Characters extends Component {
     render() {        
         return(
             <>
-                <h1>Placeholder Charcter Text</h1>
+                <h1>Characters</h1>
                 <form onChange={this.handleOnChange} onSubmit={this.handleOnSubmit}>
                     <input type="text" name="startsWith" placeholder="name"></input>
                     <br />
