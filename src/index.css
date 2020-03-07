@@ -81,6 +81,12 @@ code {
   margin: auto;
 }
 
+.character-comics {
+  width: 80%;
+  align-content: center;
+  margin: auto;
+}
+
 .comic {
   width: 30%;
   height: 400px;
@@ -89,5 +95,22 @@ code {
 }
 
 .comic img {
+  width: 100%;
+}
+
+.home-container {
+  width: 80%;
+  align-content: center;
+  margin: auto;
+}
+
+.home-img-container {
+  width: 30%;
+  height: 400px;
+  float: left;
+  margin: 10px 1.6%;
+}
+
+.home-img-container img {
   width: 100%;
 }
