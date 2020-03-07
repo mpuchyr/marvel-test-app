@@ -75,7 +75,7 @@ class Events extends Component {
 
     render(){
         return (
-            <>
+            <div className="event-container">
                 <h1>Events</h1>
                 <form onChange={this.handleOnChange} onSubmit={this.handleOnSubmit}>
                 <input type="text" name="startsWith" placeholder="name"></input>
@@ -86,7 +86,7 @@ class Events extends Component {
                 </form>
                 <br />
                 { this.displayEvents()}
-            </>
+            </div>
         )
     }
 
