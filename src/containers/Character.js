@@ -47,7 +47,8 @@ class Character extends Component {
             return (
                 <div className="comic-character-info">
                     <h1>{character.name}</h1>
-                    <img key={character.id} src={imgSrc} alt={character.name}/>                    
+                    <img key={character.id} src={imgSrc} alt={character.name}/>
+                    <p>{character.description}</p>                 
                 </div>
             )
         })
