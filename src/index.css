@@ -34,6 +34,23 @@ code {
 }
 
 
+.event-characters {
+  width: 80%;
+  align-content: center;
+  margin: auto;
+}
+
+.event-character {
+  width: 30%;
+  float: left;
+  margin: auto 1.6%;
+  height: 400px;
+}
+
+.event-character img {
+  width: 100%;
+}
+
 .comic-container {
   width: 80%;
   align-content: center;
