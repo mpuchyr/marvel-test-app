@@ -52,7 +52,7 @@ class Comics extends Component {
             return (
                 <div className="comic">
                     <NavLink to={link}>
-                        <img key={comic.id} src={imgSrc} alt={comic.title}/>
+                        <img className="comic-book-img"key={comic.id} src={imgSrc} alt={comic.title}/>
                     </NavLink>
                     <h4>{comic.title}</h4>
                 </div>
