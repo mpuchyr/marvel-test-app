@@ -87,15 +87,33 @@ code {
   margin: auto;
 }
 
-.comic {
+/* .comic {
   width: 30%;
   height: 400px;
   float: left;
   margin: 10px 1.6%;
-}
+} */
 
 .comic img {
   width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+  body .comic {
+    width: 30%;
+    height: 200px;
+    float: left;
+    margin: 10px 1.6%;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .comic {
+    width: 30%;
+    height: 400px;
+    float: left;
+    margin: 10px 1.6%;
+  }
 }
 
 .home-container {
@@ -114,3 +132,4 @@ code {
 .home-img-container img {
   width: 100%;
 }
+
