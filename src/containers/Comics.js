@@ -13,7 +13,7 @@ class Comics extends Component {
     state = {
         comics: [],
         startsWith: '',
-        limit: 20
+        limit: 21
     }
     
     componentDidMount() {
