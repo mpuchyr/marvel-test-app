@@ -151,6 +151,13 @@ code {
   }
 }
 
+@media only screen and (min-width: 1095px) {
+  body .container .character-comic-img {
+    height: 250px;
+    width: auto;
+  }
+}
+
 
 .home-container {
   width: 80%;

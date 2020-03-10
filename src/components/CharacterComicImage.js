@@ -43,7 +43,7 @@ class CharacterComicImage extends Component {
     render() {
         return (
             <div>
-                <img src={this.state.imgSrc} alt={this.state.alt} />
+                <img className="character-comic-img" src={this.state.imgSrc} alt={this.state.alt} />
                 <p>{this.state.alt}</p>
             </div>
         )
