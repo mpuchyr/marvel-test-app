@@ -75,18 +75,23 @@ class Comics extends Component {
 
     render() {
         return (
-            <div className="comic-container">
-                <h1>Comics</h1>
-                <form onChange={this.handleOnChange} onSubmit={this.handleOnSubmit}>
-                <input type="text" name="startsWith" placeholder="name"></input>
-                <br />
-                <input type="text" name="limit" placeholder="limit"></input>
-                <br />
-                <input type="submit"></input>
-                </form>
-                <br />
-                {this.displayComics()}
-            </div>
+            <>
+                <div className="comic-form">
+                    <h1>Comics</h1>
+                    <form onChange={this.handleOnChange} onSubmit={this.handleOnSubmit}>
+                    <input type="text" name="startsWith" placeholder="name"></input>
+                    <br />
+                    <input type="text" name="limit" placeholder="limit"></input>
+                    <br />
+                    <input type="submit"></input>
+                    </form>
+                    <br />
+                </div>
+                <div className="comic-container">
+                    {this.displayComics()}
+                </div>
+            </>
+
         )
     }
 }
