@@ -11,7 +11,7 @@ class Characters extends Component {
     state = {
         characters: [],
         startsWith: '',
-        limit: 20
+        limit: 21
     }
 
     componentDidMount = () => {
