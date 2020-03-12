@@ -74,18 +74,23 @@ class Characters extends Component {
     
     render() {        
         return(
-            <div className="character-container">
-                <h1>Characters</h1>
-                <form onChange={this.handleOnChange} onSubmit={this.handleOnSubmit}>
-                    <input type="text" name="startsWith" placeholder="name"></input>
+            <>
+                <div className="form-container">
+                    <h1>Characters</h1>
+                    <form onChange={this.handleOnChange} onSubmit={this.handleOnSubmit}>
+                        <input type="text" name="startsWith" placeholder="name"></input>
+                        <br />
+                        <input type="text" name="limit" placeholder="limit"></input>
+                        <br />
+                        <input type="submit"></input>
+                    </form>
                     <br />
-                    <input type="text" name="limit" placeholder="limit"></input>
-                    <br />
-                    <input type="submit"></input>
-                </form>
-                <br />
+                </div>
+                <div className="character-container">
+
                 {this.displayCharacters()}
             </div>
+            </>
         )
     }
 }
