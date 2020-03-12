@@ -190,3 +190,18 @@ code {
 .character img {
   width: 80%;
 }
+
+.comic-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.comic {
+  width: 30%;
+  margin: 0 10px;
+}
+
+.comic-book-img {
+  width: 80%;
+}
