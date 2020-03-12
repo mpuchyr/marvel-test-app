@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.event-container {
+/* .event-container {
   width: 80%;
   align-content: center;
   margin: auto;
@@ -71,7 +71,7 @@ code {
 
 .comic-container .comic img {
   /* width: 100%; */
-  width: 200px;
+  /* width: 200px;
   height: 300px;
 }
 
@@ -174,5 +174,9 @@ code {
 
 .home-img-container img {
   width: 100%;
+} */
+ 
+.character-container {
+  display: flex;
+  flex-wrap: wrap;
 }
-
