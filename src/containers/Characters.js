@@ -49,7 +49,7 @@ class Characters extends Component {
             const imgSrc = `${character.thumbnail.path}.${character.thumbnail.extension}`
             const link = `/characters/${character.id}`
             return (
-                <div className="comic">
+                <div className="character">
                     <NavLink to={link} >
                         <img key={character.id} src={imgSrc} alt={character.name}/>
                     </NavLink>
