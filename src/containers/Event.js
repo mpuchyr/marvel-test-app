@@ -45,7 +45,7 @@ class Event extends Component {
         return this.state.events.map(event => {
             let imgSrc = `${event.thumbnail.path}.${event.thumbnail.extension}`
             return (
-                <div className="event">
+                <div className="event-info">
                     <h1>{event.title}</h1>
                     <img key={event.id} src={imgSrc} alt={event.title}/>
                     <p>{event.description}</p>
