@@ -18,7 +18,7 @@ class EventCharacters extends Component {
             let charId = charURI[charURI.length - 1]
             let link = `/characters/${charId}`
             return (
-                <div className="event-character">
+                <div className="character">
                     <NavLink to={link} key={character.name}>
                         <EventCharacterImage charId={charId}/>
                     </NavLink>
@@ -29,7 +29,7 @@ class EventCharacters extends Component {
 
     displayCharacters = () => {
         return (
-            <div className="event-characters">
+            <div className="character-container">
                 {this.getCharacter()}
             </div>
         )
