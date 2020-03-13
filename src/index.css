@@ -205,3 +205,19 @@ code {
 .comic-book-img {
   width: 80%;
 }
+
+.event-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: left;
+  justify-content: center;
+}
+
+.event {
+  width: 30%;
+  margin: 0 5px;
+}
+
+.event img {
+  width: 80%;
+}
