@@ -49,7 +49,7 @@ class Events extends Component {
             const imgSrc = `${event.thumbnail.path}.${event.thumbnail.extension}`
             const link = `/events/${event.id}`
             return (
-                <div className="comic">
+                <div className="event">
                     <NavLink to={link}>
                         <img key={event.id} src={imgSrc} alt={event.title}/>
                     </NavLink>
@@ -75,18 +75,23 @@ class Events extends Component {
 
     render(){
         return (
-            <div className="event-container">
-                <h1>Events</h1>
-                <form onChange={this.handleOnChange} onSubmit={this.handleOnSubmit}>
-                <input type="text" name="startsWith" placeholder="name"></input>
-                <br />
-                <input type="text" name="limit" placeholder="limit"></input>
-                <br />
-                <input type="submit"></input>
-                </form>
-                <br />
-                { this.displayEvents()}
-            </div>
+            <>
+                <div className="event-form">
+                    <h1>Events</h1>
+                    <form onChange={this.handleOnChange} onSubmit={this.handleOnSubmit}>
+                    <input type="text" name="startsWith" placeholder="name"></input>
+                    <br />
+                    <input type="text" name="limit" placeholder="limit"></input>
+                    <br />
+                    <input type="submit"></input>
+                    </form>
+                    <br />
+                </div>
+                <div className="event-container">
+                    { this.displayEvents()}
+                </div>
+            </>
+
         )
     }
 
